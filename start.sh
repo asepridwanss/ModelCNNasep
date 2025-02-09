@@ -1,3 +1,4 @@
+#!/bin/bash
 set -eu
 
 export PYTHONUNBUFFERED=true
@@ -15,4 +16,3 @@ fi
 $VIRTUALENV/bin/pip install -r requirements.txt
 
 $VIRTUALENV/bin/python main.py
-Footer
