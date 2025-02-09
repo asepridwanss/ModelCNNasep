@@ -5,6 +5,7 @@ from tensorflow.keras.preprocessing import image
 import PIL
 import os
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import numpy as np	
 
 print(PIL.__version__)
@@ -21,7 +22,7 @@ dic = {0 : 'Rp.1000',
 	   6 : 'Rp.50000'
 	   }
 
-model = load_model('Rupiah-detect Exception-97.14.h5')
+model = load_model('static/model/Rupiah-detect Exception-97.14.h5')
 
 model.make_predict_function()
 
@@ -55,4 +56,4 @@ def get_output():
 
 if __name__ =='__main__':
 	#app.debug = True
-	app.run(debug = True)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
