@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request # type: ignore
-
+import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import PIL
 import numpy as np	
 print(PIL.__version__)
-
+# Paksa penggunaan CPU saja
+tf.config.set_visible_devices([], 'GPU')
 app = Flask(__name__)
 
 dic = {0 : 'Rp.1000',  
