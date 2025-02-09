@@ -3,7 +3,10 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import PIL
+import os
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 import numpy as np	
+
 print(PIL.__version__)
 # Paksa penggunaan CPU saja
 tf.config.set_visible_devices([], 'GPU')
